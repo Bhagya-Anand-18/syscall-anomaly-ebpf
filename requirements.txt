@@ -1,0 +1,11 @@
+# Phase 4+ (feature extraction / dataset / config)
+numpy
+pandas
+pyyaml
+
+# Phase 5+ (autoencoder training/eval)
+torch
+matplotlib
+
+# Phase 7 (evaluation metrics)
+scikit-learn

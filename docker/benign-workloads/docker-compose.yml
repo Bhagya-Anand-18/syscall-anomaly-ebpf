@@ -1,0 +1,30 @@
+services:
+  benign_web:
+    image: alpine
+    container_name: benign_web
+    command: >
+      sh -c "httpd -f -p 8080 -h /var/www &
+      while true; do wget -q -O /dev/null http://127.0.0.1:8080/; sleep 0.2; done"
+
+  benign_batch:
+    image: alpine
+    container_name: benign_batch
+    command: >
+      sh -c "while true; do
+      dd if=/dev/urandom of=/tmp/f bs=1k count=50 2>/dev/null;
+      gzip -f /tmp/f; gunzip -f /tmp/f.gz;
+      sort /tmp/f -o /tmp/f2;
+      rm -f /tmp/f /tmp/f2;
+      sleep 0.5; done"
+
+  benign_shell:
+    image: alpine
+    container_name: benign_shell
+    command: >
+      sh -c "while true; do
+      ls -la /etc >/dev/null;
+      cat /etc/passwd >/dev/null;
+      grep root /etc/passwd >/dev/null;
+      ps aux >/dev/null;
+      find /etc -maxdepth 1 >/dev/null;
+      sleep 0.3; done"

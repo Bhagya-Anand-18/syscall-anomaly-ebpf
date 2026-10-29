@@ -1,0 +1,24 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.o
+*.bpf.o
+*.skel.h
+data/live/
+data/lid_ds/raw/
+data/lid_ds/exports/
+model/checkpoints/
+*.log
+.pytest_cache/
+ebpf/loader
+ebpf/vmlinux.h
+ebpf/err.log
+
+# course documents (not part of the code release)
+reports/*.pdf
+reports/*.docx
+reports/*.zip
+reports/*.pptx
+.nfs*
+_stale_git_delete_me/

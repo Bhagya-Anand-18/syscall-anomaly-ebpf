@@ -1,0 +1,5 @@
+# Windowing parameters -- provisional defaults, not yet empirically chosen
+# (see IMPLEMENTATION_PLAN.md open decision #5). Revisit after looking at
+# real per-container syscall rates from live captures.
+window_size: 64
+stride: 32
